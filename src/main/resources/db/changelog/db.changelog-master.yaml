@@ -1,4 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: db/changelog/001-create-payments-collection.yaml
-      relativeToChangelogFile: true
