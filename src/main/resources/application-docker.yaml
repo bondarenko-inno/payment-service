@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      host: ${PAYMENT_MONGO_HOST}
+      port: ${PAYMENT_MONGO_PORT}
+      database: ${PAYMENT_MONGO_DB}
+      username: ${PAYMENT_MONGO_USERNAME}
+      password: ${PAYMENT_MONGO_PASSWORD}
+      authentication-database: admin
+
+
+environment:
+  host: http://127.0.0.1
+  kafka:
+    address: ${AUTH_SERVICE_KAFKA_HOST}:${AUTH_SERVICE_KAFKA_PORT}
