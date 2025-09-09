@@ -3,6 +3,8 @@ package org.ebndrnk.paymentservice.integration;
 import org.ebndrnk.paymentservice.config.KafkaConsumerConfig;
 import org.ebndrnk.paymentservice.config.KafkaProducerConfig;
 import org.ebndrnk.paymentservice.config.TestRestTemplateConfig;
+import org.ebndrnk.paymentservice.kafka.PaymentProcessListener;
+import org.ebndrnk.paymentservice.kafka.PaymentProcessedPublisher;
 import org.ebndrnk.paymentservice.model.document.Payment;
 import org.ebndrnk.paymentservice.model.document.PaymentStatus;
 import org.ebndrnk.paymentservice.model.dto.PaymentResponse;
@@ -19,6 +21,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -48,6 +51,12 @@ class PaymentControllerIntegrationTest {
 
     @MockitoBean
     private KafkaProducerConfig kafkaProducerConfig;
+
+    @MockitoBean
+    private PaymentProcessedPublisher paymentProcessedPublisher;
+
+    @MockitoBean
+    private PaymentProcessListener paymentProcessListener;
 
     @Container
     static MongoDBContainer mongo = new MongoDBContainer("mongo:6.0")
