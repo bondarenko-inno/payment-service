@@ -1,0 +1,7 @@
+secret:
+  key: test-secret-for-tests-test-secret-for-tests
+
+environment:
+  kafka:
+    # spring-kafka-test сам кладёт сюда адрес embedded брокера
+    address: ${spring.embedded.kafka.brokers}
