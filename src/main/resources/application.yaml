@@ -32,4 +32,4 @@ payment:
 
 environment:
   kafka:
-    address: localhost:29092
+    address: localhost:9092

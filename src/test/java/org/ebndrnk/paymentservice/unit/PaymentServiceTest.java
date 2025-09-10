@@ -44,9 +44,7 @@ class PaymentServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    // --------------------
-    // createPayment()
-    // --------------------
+
     @Test
     void createPayment_shouldSaveAndPublishPayment() {
         PaymentRequest request = new PaymentRequest(String.valueOf(new Random().nextInt(10)), "user1", BigDecimal.valueOf(100));
@@ -80,9 +78,7 @@ class PaymentServiceTest {
                 .hasMessageContaining("Payment amount must be greater than zero");
     }
 
-    // --------------------
-    // getPaymentsByOrderId()
-    // --------------------
+
     @Test
     void getPaymentsByOrderId_shouldReturnResponses() {
         String orderId = "order1";
@@ -106,9 +102,7 @@ class PaymentServiceTest {
                 .hasMessageContaining("No payments found for orderId");
     }
 
-    // --------------------
-    // getPaymentsByUserId()
-    // --------------------
+
     @Test
     void getPaymentsByUserId_shouldReturnResponses() {
         String userId = "user1";
@@ -132,9 +126,7 @@ class PaymentServiceTest {
                 .hasMessageContaining("No payments found for userId");
     }
 
-    // --------------------
-    // getPaymentsByStatus()
-    // --------------------
+
     @Test
     void getPaymentsByStatus_shouldReturnResponses() {
         Payment payment = Payment.builder().id(UUID.randomUUID()).status(PaymentStatus.SUCCESS).build();
@@ -157,9 +149,7 @@ class PaymentServiceTest {
                 .hasMessageContaining("No payments found with status");
     }
 
-    // --------------------
-    // getTotalSumPaymentsForPeriod()
-    // --------------------
+
     @Test
     void getTotalSumPaymentsForPeriod_shouldReturnTotal() {
         Instant from = Instant.parse("2025-01-01T00:00:00Z");
