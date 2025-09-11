@@ -27,7 +27,7 @@ ext {
 
 dependencies {
 
-    implementation 'com.github.bondarenko-inno:common-lib:2.0.0'
+    implementation 'com.github.bondarenko-inno:common-lib:2.0.2'
 
 
 
@@ -52,7 +52,8 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner'
-
+    // --- Actuator
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 }
 
 dependencyManagement {
