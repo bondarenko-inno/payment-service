@@ -33,3 +33,14 @@ payment:
 environment:
   kafka:
     address: localhost:9092
+
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
