@@ -27,7 +27,7 @@ ext {
 
 dependencies {
 
-    implementation 'com.github.bondarenko-inno:common-lib:2.0.2'
+    implementation 'com.github.bondarenko-inno:common-lib:2.0.7'
 
 
 
